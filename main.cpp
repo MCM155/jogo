@@ -1,11 +1,8 @@
 #include <SFML/Graphics.hpp>
-
+#include </home/joao/Documents/aula/game/jogo/dino.hpp>
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
-
     while (window.isOpen())
     {
         sf::Event event;
@@ -14,10 +11,12 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-
-        window.clear();
-        window.draw(shape);
+        dino Dino;        
+        Dino.setsize(sf::Vector2f(100,10));
+        Dino.setPosition(sf::Vector2f(50,50));
+        Dino.draw(window);
         window.display();
+        window.clear();
     }
 
     return 0;
